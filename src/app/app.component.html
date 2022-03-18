@@ -1,4 +1,30 @@
 <div class="container">
+  <div class="col">
+    <h3>{{titulo}}</h3>
+  </div>
+  <hr/>
+  <table>
+    <tr>
+        <input type="text" 
+        placeholder="Nombre"
+        class="form-control"
+        [(ngModel)]='nombreInput'>
+    </tr><br/>
+    <tr>
+        <input type="text" 
+          placeholder="Apellido"
+            class="form-control"
+            [(ngModel)]='apellidoInput'>
+    </tr><br/>
+    <tr>
+        <button class='btn btn-primary'
+        (click)='agregarPersona()'>Agregar</button>
+    </tr>
+</table>
+      
+</div>
+
+<div class="container">
   <div class="row">
     <div class="col">
       <div *ngFor="let persona of personas; let i = index">
