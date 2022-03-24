@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoggingServices } from './LoggingServices.services';
 import { Persona } from './persona.model';
 
 @Component({
@@ -14,7 +15,10 @@ export class AppComponent {
                       , new Persona('Karla','Lara')
                     ];
   
+  constructor(private loggingServices:LoggingServices){}
+
   personaAgregada(persona: Persona){
+    this.loggingServices.enviaMensajeAConsola("Agregamos persona al arreglo");
     this.personas.push(persona);
   }
 }
