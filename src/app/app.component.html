@@ -4,32 +4,30 @@
   </div>
   <hr/>
   <table>
-    <tr>
+    <td>
         <input type="text" 
         placeholder="Nombre"
         class="form-control"
         [(ngModel)]='nombreInput'>
-    </tr><br/>
-    <tr>
+    </td>
+    <td>
         <input type="text" 
           placeholder="Apellido"
             class="form-control"
             [(ngModel)]='apellidoInput'>
-    </tr><br/>
-    <tr>
+    </td>
+    <td>
         <button class='btn btn-primary'
         (click)='agregarPersona()'>Agregar</button>
-    </tr>
+    </td>
 </table>
-      
+<hr/>
+<app-persona
+*ngFor="let personaElemento of personas; let i = index"
+[persona]="personaElemento"
+[indice]="i"
+>
+
+</app-persona> 
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div *ngFor="let persona of personas; let i = index">
-        {{i+1}}: {{persona.nombre}} {{persona.apellido}}
-      </div>
-    </div>
-  </div>
-</div>
