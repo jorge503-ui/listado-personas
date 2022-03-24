@@ -13,12 +13,8 @@ export class AppComponent {
                       , new Persona('Laura','Juares')
                       , new Persona('Karla','Lara')
                     ];
-  nombreInput:string = '';
-  apellidoInput:string = '';
-
-  agregarPersona(){
-    console.log("hola");
-    let persona1 = new Persona(this.nombreInput,this.apellidoInput);
-    this.personas.push(persona1);
+  
+  personaAgregada(persona: Persona){
+    this.personas.push(persona);
   }
 }

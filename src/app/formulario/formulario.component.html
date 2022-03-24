@@ -1,0 +1,21 @@
+<table>
+  <td>
+    <input
+      type="text"
+      placeholder="Nombre"
+      class="form-control"
+      [(ngModel)]="nombreInput"
+    />
+  </td>
+  <td>
+    <input
+      type="text"
+      placeholder="Apellido"
+      class="form-control"
+      [(ngModel)]="apellidoInput"
+    />
+  </td>
+  <td>
+    <button class="btn btn-primary" (click)="agregarPersona()">Agregar</button>
+  </td>
+</table>

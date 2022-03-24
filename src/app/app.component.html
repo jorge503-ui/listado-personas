@@ -1,33 +1,18 @@
 <div class="container">
   <div class="col">
-    <h3>{{titulo}}</h3>
+    <h3>{{ titulo }}</h3>
   </div>
-  <hr/>
-  <table>
-    <td>
-        <input type="text" 
-        placeholder="Nombre"
-        class="form-control"
-        [(ngModel)]='nombreInput'>
-    </td>
-    <td>
-        <input type="text" 
-          placeholder="Apellido"
-            class="form-control"
-            [(ngModel)]='apellidoInput'>
-    </td>
-    <td>
-        <button class='btn btn-primary'
-        (click)='agregarPersona()'>Agregar</button>
-    </td>
-</table>
-<hr/>
-<app-persona
-*ngFor="let personaElemento of personas; let i = index"
-[persona]="personaElemento"
-[indice]="i"
->
+  <hr />
+  <app-formulario
+    (personaCreada)="personaAgregada($event)"  
+  >
+  </app-formulario>
+  <hr />
 
-</app-persona> 
+  <app-persona
+    *ngFor="let personaElemento of personas; let i = index"
+    [persona]="personaElemento"
+    [indice]="i"
+  >
+  </app-persona>
 </div>
-
