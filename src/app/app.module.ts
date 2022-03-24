@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PersonaComponent } from './persona/persona.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { LoggingServices } from './LoggingServices.services';
+import { PersonasServices } from './persona.services';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,10 @@ import { LoggingServices } from './LoggingServices.services';
     BrowserModule,
     FormsModule
   ],
-  providers: [LoggingServices],
+  providers: [
+    LoggingServices,
+    PersonasServices
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
